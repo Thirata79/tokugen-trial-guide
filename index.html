@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tokugen Dojo — Trial Booking Operator Guide</title>
+<style>
+  :root{
+    --navy:#1f2a44; --navy2:#2c3a5e; --crimson:#d12a3e; --crimson-d:#a81f30;
+    --ink:#1f2532; --mut:#667085; --line:#e6e8ef; --bg:#f5f6fa; --card:#fff;
+    --ok:#1c8a52; --okbg:#e8f6ee; --warnbg:#fff6e6; --warn:#9a6700;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    line-height:1.65;font-size:16px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 64px}
+  header.top{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:26px 0 22px}
+  .top-in{max-width:760px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:14px}
+  .logo{width:54px;height:54px;border-radius:12px;background:#fff;padding:5px;flex:0 0 auto;
+    box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .logo img{width:100%;height:100%;object-fit:contain;display:block}
+  .top h1{margin:0;font-size:20px;letter-spacing:.2px}
+  .top .sub{margin:2px 0 0;font-size:13px;color:#c9d2e6;font-weight:600;letter-spacing:1px}
+  .top .who{margin:3px 0 0;font-size:13px;color:#aab6d4}
+  h2{font-size:18px;margin:30px 0 10px;padding-top:8px;color:var(--navy);
+    border-top:2px solid var(--line)}
+  h2 .n{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+    background:var(--crimson);color:#fff;border-radius:50%;font-size:14px;margin-right:8px;font-weight:700}
+  h3{font-size:15.5px;margin:20px 0 6px;color:var(--navy2)}
+  p{margin:8px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0;
+    box-shadow:0 1px 2px rgba(16,24,40,.04)}
+  .lead{font-size:15px;color:#33405c}
+  ul,ol{margin:8px 0;padding-left:22px}
+  li{margin:5px 0}
+  .callout{border-radius:12px;padding:12px 14px;margin:12px 0;font-size:14.5px}
+  .c-key{background:var(--navy);color:#fff}
+  .c-key b{color:#ffd9de}
+  .c-ok{background:var(--okbg);border:1px solid #bfe6cd;color:#14613a}
+  .c-warn{background:var(--warnbg);border:1px solid #f0d79a;color:var(--warn)}
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:#eef1f7;border:1px solid #e0e4ee;border-radius:6px;padding:1px 7px;font-size:14px}
+  .send{display:inline-block;background:#06c755;color:#fff;font-weight:700;border-radius:8px;
+    padding:3px 12px;font-size:14px;letter-spacing:.3px}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14.5px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f0f2f8;color:var(--navy);font-size:13px}
+  td:first-child{white-space:nowrap;font-weight:700;color:var(--navy2)}
+  .btnrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+  .lbtn{border-radius:8px;padding:7px 14px;font-weight:700;font-size:14px;border:1.5px solid}
+  .lbtn.ok{background:#fff;border-color:var(--ok);color:var(--ok)}
+  .lbtn.no{background:#fff;border-color:var(--crimson);color:var(--crimson)}
+  .lbtn.lk{background:#fff;border-color:var(--navy2);color:var(--navy2)}
+  .leg{margin:6px 0 0;font-size:14px;color:#33405c}
+  .leg b{color:var(--navy)}
+  .step{display:flex;gap:12px;margin:10px 0}
+  .step .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;
+    font-weight:700;text-align:center;line-height:28px;font-size:14px}
+  .step .tx{flex:1}
+  .flow{display:flex;flex-direction:column;gap:0;margin:10px 0}
+  .flow .f{background:#fff;border:1px solid var(--line);border-left:4px solid var(--crimson);
+    border-radius:10px;padding:10px 14px}
+  .flow .arr{color:var(--mut);text-align:center;font-size:18px;line-height:1;margin:2px 0}
+  .pill{display:inline-block;background:#fdecef;color:var(--crimson-d);border-radius:20px;
+    padding:1px 10px;font-size:13px;font-weight:700;margin-left:4px}
+  footer{margin-top:34px;padding-top:16px;border-top:2px solid var(--line);color:var(--mut);font-size:13px}
+  a{color:var(--crimson-d)}
+  .em{color:var(--crimson-d);font-weight:700}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="logo"><img src="data:image/png;base64,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" alt="Tokugen Dojo"></div>
+    <div>
+      <h1>Trial Booking — Operator Guide</h1>
+      <div class="sub">TOKUGEN DOJO · KARATE IN ENGLISH</div>
+      <div class="who">For Rob &amp; family · how to handle online trial requests</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card lead">
+    <p style="margin-top:0"><b>What this is.</b> People can now book a <b>free trial lesson</b> online. When someone books, <b>you</b> decide to <b>Confirm</b> or <b>Decline</b>, and the system automatically messages the customer at every step. <span class="em">Nothing is ever confirmed until you confirm it.</span></p>
+    <p style="margin-bottom:0">You can do everything two ways: straight from the <b>LINE alert</b> (fastest), or from the <b>admin page</b> (full control). This guide covers both.</p>
+  </div>
+
+  <h2><span class="n">1</span>How a booking flows</h2>
+  <div class="flow">
+    <div class="f"><b>① Customer books</b> — picks a class, one date &amp; time, and enters their name + email.</div>
+    <div class="arr">▼</div>
+    <div class="f"><b>② You get a LINE alert</b> — “🆕 New trial request” with their name, class and requested time.</div>
+    <div class="arr">▼</div>
+    <div class="f"><b>③ You Confirm or Decline</b> — one tap in LINE, or from the admin page.</div>
+    <div class="arr">▼</div>
+    <div class="f"><b>④ The customer is messaged automatically</b> — confirmation + access details, or a polite “let’s find another date”.</div>
+  </div>
+  <div class="callout c-warn">⚠️ A new request is only <b>held</b>, not booked. The time slot is reserved so no one else can grab it, but the customer is told <b>“not confirmed yet.”</b> It becomes a real booking the moment you Confirm.</div>
+
+  <h2><span class="n">2</span>One-time setup — turn on your phone alerts</h2>
+  <p>Do this once on <b>each phone</b> that should receive alerts (Rob’s and his wife’s).</p>
+  <div class="step"><div class="num">1</div><div class="tx">Open the dojo’s LINE official account — <b>Tokugen Dojo</b> (the same account customers use to book). Add it as a friend if you haven’t.</div></div>
+  <div class="step"><div class="num">2</div><div class="tx">In that chat, type and send the word <span class="send">register</span></div></div>
+  <div class="step"><div class="num">3</div><div class="tx">You’ll get a reply: <b>“✅ Staff alerts are ON.”</b> That’s it — new trial requests will now arrive in this chat with buttons.</div></div>
+  <div class="callout c-ok">✅ To stop alerts later, send <span class="send">unregister</span> in the same chat.</div>
+
+  <h2><span class="n">3</span>Way A — Respond straight from the LINE alert</h2>
+  <p>When a trial comes in, you’ll see a message like “🆕 New trial request — <i>name · class · requested time</i>” with these buttons:</p>
+  <div class="btnrow">
+    <span class="lbtn ok">Confirm</span>
+    <span class="lbtn no">Decline</span>
+    <span class="lbtn lk">Open admin page</span>
+  </div>
+  <p class="leg"><b>Confirm</b> — books the lesson and automatically sends the customer their confirmation + access details.<br>
+  <b>Decline</b> — automatically sends the customer a polite note that the requested date isn’t available (generic reason).<br>
+  <b>Open admin page</b> — opens the full web page (Way B) — use this when you want to type a specific reason, cancel, or review details.</p>
+  <p>After you tap, you get a short confirmation back, e.g. <b>“✅ Confirmed (Name · date).”</b></p>
+  <div class="callout c-warn">If two of you tap on the same request, <b>whoever taps first wins</b>. The second person simply sees “This request was already handled.” No harm done.</div>
+
+  <h2><span class="n">4</span>Way B — The admin page (full control)</h2>
+  <div class="callout c-key">
+    🔗 Web page: <b>dojo-booking-two.vercel.app/admin</b><br>
+    🔑 Password: <b>&mdash; Hirata will send this to you privately on LINE</b>
+  </div>
+  <p>Open the link, enter the password, and you’re in. Top-right has a language switch — tap <span class="mono">EN</span> for English.</p>
+  <h3>What you’ll see</h3>
+  <p>A list of requests (Pending + Confirmed). Each row shows: the <b>requested date &amp; time</b>, the <b>class</b>, the <b>participant</b> (name, guardian, how they heard about us), and <b>contact</b> (email, and whether they’re linked on LINE).</p>
+  <h3>What you can do on each request</h3>
+  <table>
+    <tr><th>Button</th><th>What it does</th></tr>
+    <tr><td>Confirm</td><td>Books it. Customer auto-receives confirmation + access &amp; what-to-bring. The slot is locked.</td></tr>
+    <tr><td>Decline</td><td>You <b>type a reason</b>; the customer receives it in their own language (Japanese or English).</td></tr>
+    <tr><td>Cancel</td><td>For an already-confirmed booking — cancel it with an optional apology message.</td></tr>
+    <tr><td>✉ Message</td><td>Preview the exact text that will be (or was) sent to the customer — handy to check before acting.</td></tr>
+    <tr><td>Show history</td><td>Reveal past declined/cancelled requests. “Hide history” keeps the list focused on what needs action.</td></tr>
+    <tr><td>↻ Refresh</td><td>Reload the latest requests.</td></tr>
+    <tr><td>Log out</td><td>Sign out of the admin page.</td></tr>
+  </table>
+
+  <h2><span class="n">5</span>What the customer receives automatically</h2>
+  <table>
+    <tr><th>When…</th><th>The customer is sent…</th></tr>
+    <tr><td>They book</td><td>“Request received — not confirmed yet. The dojo will get back to you.”</td></tr>
+    <tr><td>You Confirm</td><td>Confirmation with the date/time, the address, what to bring, and when to arrive.</td></tr>
+    <tr><td>You Decline</td><td>A polite note that the requested date isn’t available, inviting them to choose another.</td></tr>
+    <tr><td>You Cancel</td><td>An apology that the confirmed lesson had to be cancelled.</td></tr>
+  </table>
+  <p style="font-size:14px;color:var(--mut)">Tip: you can always preview these with the <b>✉ Message</b> button on the admin page before you act.</p>
+
+  <h2><span class="n">6</span>Good to know</h2>
+  <ul>
+    <li><b>Only name + email are required</b> from the customer. Phone number and age are collected later, at enrollment — not at the trial stage.</li>
+    <li><b>The class tells you the age group</b> — Junior (4–7), Youth (8–14), Adults (15+) — so you don’t need to ask the child’s age.</li>
+    <li><b>One date per request.</b> The customer picks a single preferred date &amp; time.</li>
+    <li><b>No double-booking.</b> Once a slot is confirmed, it’s blocked for everyone else.</li>
+    <li><b>“How did you hear about us?”</b> is shown on each request (Google / social media / referral / flyer / other) — useful for knowing what’s working.</li>
+  </ul>
+
+  <h2><span class="n">7</span>Need help?</h2>
+  <p>Anything unclear, or something not working as expected — contact <b>Takeshi Hirata</b> &nbsp;<a href="mailto:info@takeshihirata.com">info@takeshihirata.com</a>. Happy to walk you through it.</p>
+
+  <footer>
+    Tokugen Dojo · Trial Booking Operator Guide · English · prepared by Takeshi Hirata.<br>
+    System: dojo-booking-two.vercel.app
+  </footer>
+</div>
+</body>
+</html>
