@@ -85,19 +85,19 @@
 <div class="wrap">
 
   <div class="card lead">
-    <p style="margin-top:0"><b>What this is.</b> People can now book a <b>free trial lesson</b> online. When someone books, <b>you</b> decide to <b>Confirm</b> or <b>Decline</b>, and the system automatically messages the customer at every step. <span class="em">Nothing is ever confirmed until you confirm it.</span></p>
-    <p style="margin-bottom:0">You can do everything two ways: straight from the <b>LINE alert</b> (fastest), or from the <b>admin page</b> (full control). This guide covers both.</p>
+    <p style="margin-top:0"><b>What this is.</b> People can now book a <b>free trial lesson</b> online — either inside <b>LINE</b> or on the <b>website</b>. When someone books, <b>you</b> decide to <b>Confirm</b> or <b>Decline</b>, and the system automatically messages the customer at every step. <span class="em">Nothing is ever confirmed until you confirm it.</span></p>
+    <p style="margin-bottom:0">How you're alerted depends on how they booked: <b>LINE bookings</b> ping you in the LINE chat with buttons (fastest); <b>website bookings</b> email you at <b>info@tokugendojo.com</b> with a link to the admin page. Either way, the <b>admin page</b> gives you full control. This guide covers both.</p>
   </div>
 
   <h2><span class="n">1</span>How a booking flows</h2>
   <div class="flow">
     <div class="f"><b>① Customer books</b> — picks a class, one date &amp; time, and enters their name + email.</div>
     <div class="arr">▼</div>
-    <div class="f"><b>② You get a LINE alert</b> — “🆕 New trial request” with their name, class and requested time.</div>
+    <div class="f"><b>② You're alerted</b> — booked <b>in LINE</b>? a “🆕 New trial request” message with buttons. Booked <b>on the website</b>? an <b>email to info@tokugendojo.com</b> with their details and a link to the admin page.</div>
     <div class="arr">▼</div>
     <div class="f"><b>③ You Confirm or Decline</b> — one tap in LINE, or from the admin page.</div>
     <div class="arr">▼</div>
-    <div class="f"><b>④ The customer is messaged automatically</b> — confirmation + access details, or a polite “let’s find another date”.</div>
+    <div class="f"><b>④ The customer is messaged automatically</b> — confirmation + access details, or a polite “let’s find another date” — sent <b>in LINE or by email</b>, matching how they booked.</div>
   </div>
   <div class="callout c-warn">⚠️ A new request is only <b>held</b>, not booked. The time slot is reserved so no one else can grab it, but the customer is told <b>“not confirmed yet.”</b> It becomes a real booking the moment you Confirm.</div>
 
@@ -107,9 +107,10 @@
   <div class="step"><div class="num">2</div><div class="tx">In that chat, type and send the word <span class="send">register</span></div></div>
   <div class="step"><div class="num">3</div><div class="tx">You’ll get a reply: <b>“✅ Staff alerts are ON.”</b> That’s it — new trial requests will now arrive in this chat with buttons.</div></div>
   <div class="callout c-ok">✅ To stop alerts later, send <span class="send">unregister</span> in the same chat.</div>
+  <div class="callout c-key">📧 <b>Website bookings</b> are emailed to <b>info@tokugendojo.com</b> automatically — no setup needed, just keep an eye on that inbox. (The <span class="send">register</span> step above is only for the LINE button-alerts.)</div>
 
-  <h2><span class="n">3</span>Way A — Respond straight from the LINE alert</h2>
-  <p>When a trial comes in, you’ll see a message like “🆕 New trial request — <i>name · class · requested time</i>” with these buttons:</p>
+  <h2><span class="n">3</span>Way A — From the LINE alert <span class="pill">LINE bookings</span></h2>
+  <p>When someone books <b>inside LINE</b>, you’ll see a message like “🆕 New trial request — <i>name · class · requested time</i>” with these buttons:</p>
   <div class="btnrow">
     <span class="lbtn ok">Confirm</span>
     <span class="lbtn no">Decline</span>
@@ -119,6 +120,7 @@
   <b>Decline</b> — automatically sends the customer a polite note that the requested date isn’t available (generic reason).<br>
   <b>Open admin page</b> — opens the full web page (Way B) — use this when you want to type a specific reason, cancel, or review details.</p>
   <p>After you tap, you get a short confirmation back, e.g. <b>“✅ Confirmed (Name · date).”</b></p>
+  <div class="callout c-key">🌐 <b>Website bookings don’t have these LINE buttons.</b> They arrive as an <b>email</b> at info@tokugendojo.com — open the <b>admin-page link</b> in that email and Confirm/Decline there (Way B, below).</div>
   <div class="callout c-warn">If two of you tap on the same request, <b>whoever taps first wins</b>. The second person simply sees “This request was already handled.” No harm done.</div>
 
   <h2><span class="n">4</span>Way B — The admin page (full control)</h2>
@@ -126,7 +128,7 @@
     🔗 Web page: <b>dojo-booking-two.vercel.app/admin</b><br>
     🔑 Password: <b>&mdash; Hirata will send this to you privately on LINE</b>
   </div>
-  <p>Open the link, enter the password, and you’re in. Top-right has a language switch — tap <span class="mono">EN</span> for English.</p>
+  <p>Open the link, enter the password, and you’re in. Top-right has a language switch — tap <span class="mono">EN</span> for English. <b>This is also where you handle website (email) bookings</b> — the link in the alert email brings you straight here.</p>
   <h3>What you’ll see</h3>
   <p>A list of requests (Pending + Confirmed). Each row shows: the <b>requested date &amp; time</b>, the <b>class</b>, the <b>participant</b> (name, guardian, how they heard about us), and <b>contact</b> (email, and whether they’re linked on LINE).</p>
   <h3>What you can do on each request</h3>
@@ -142,6 +144,7 @@
   </table>
 
   <h2><span class="n">5</span>What the customer receives automatically</h2>
+  <p>Each message goes out through the <b>same channel the customer used</b>: people who booked in LINE get a LINE message; people who booked on the website get an <b>email</b>. Same content either way.</p>
   <table>
     <tr><th>When…</th><th>The customer is sent…</th></tr>
     <tr><td>They book</td><td>“Request received — not confirmed yet. The dojo will get back to you.”</td></tr>
@@ -157,6 +160,7 @@
     <li><b>The class tells you the age group</b> — Junior (4–7), Youth (8–14), Adults (15+) — so you don’t need to ask the child’s age.</li>
     <li><b>One date per request.</b> The customer picks a single preferred date &amp; time.</li>
     <li><b>No double-booking.</b> Once a slot is confirmed, it’s blocked for everyone else.</li>
+    <li><b>Two front doors, one back office.</b> LINE and website bookings both land in the <b>same admin list</b> and the <b>same calendar</b> — nothing extra to manage.</li>
     <li><b>“How did you hear about us?”</b> is shown on each request (Google / social media / referral / flyer / other) — useful for knowing what’s working.</li>
   </ul>
 
@@ -165,7 +169,7 @@
 
   <footer>
     Tokugen Dojo · Trial Booking Operator Guide · English · prepared by Takeshi Hirata.<br>
-    System: dojo-booking-two.vercel.app
+    System: dojo-booking-two.vercel.app · Website-booking alerts → info@tokugendojo.com
   </footer>
 </div>
 </body>
