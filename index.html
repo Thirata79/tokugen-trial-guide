@@ -132,6 +132,14 @@
   <div class="callout c-ok">✅ To stop alerts later, send <span class="send">unregister</span> in the same chat.</div>
   <div class="callout c-key">📧 <b>Website bookings</b> are emailed to <b>info@tokugendojo.com</b> automatically — no setup needed, just keep an eye on that inbox. (The <span class="send">register</span> step above is only for the LINE button-alerts.)</div>
 
+  <h3>Put the admin app on your home screen — with a count badge</h3>
+  <p>Add the admin page to your phone's home screen so it opens like an app — and shows a <b>red number badge</b> on its icon for anything waiting on you (new trial requests + new enrollment applications), just like LINE or Mail.</p>
+  <div class="step"><div class="num">1</div><div class="tx">On your iPhone, open <b>dojo-booking-two.vercel.app/admin</b> in <b>Safari</b>.</div></div>
+  <div class="step"><div class="num">2</div><div class="tx">Tap the <b>Share</b> icon → <b>Add to Home Screen</b>. A 徳源 icon appears on your home screen.</div></div>
+  <div class="step"><div class="num">3</div><div class="tx">Open the app <b>from that new icon</b>, log in, then tap <b>“通知をオン / Turn on notifications”</b> at the top → <b>Allow</b>.</div></div>
+  <div class="callout c-ok">✅ Done. New trials and enrollments now pop a notification <b>and</b> add a number to the icon. The number is your <b>to-do count</b> — it drops as you Confirm trials and Approve enrollments, and disappears when you're all caught up.</div>
+  <div class="callout c-warn">⚠️ Needs iPhone iOS 16.4 or newer, and you must open it <b>from the home-screen icon</b> (not a Safari tab) for the badge to work. Do this on each phone that should show the badge. If you already had a 徳源 shortcut, delete it first and re-add it with the steps above.</div>
+
   <h2><span class="n">3</span>Way A — From the LINE alert <span class="pill">LINE bookings</span></h2>
   <p>When someone books <b>inside LINE</b>, you’ll see a message like “🆕 New trial request — <i>name · class · requested time</i>” with these buttons:</p>
   <div class="btnrow">
@@ -153,7 +161,7 @@
   </div>
   <p>Open the link, enter the password, and you’re in. Top-right has a language switch — tap <span class="mono">EN</span> for English. <b>This is also where you handle website (email) bookings</b> — the link in the alert email brings you straight here.</p>
   <h3>What you’ll see</h3>
-  <p>A list of requests (Pending + Confirmed). Each row shows: the <b>requested date &amp; time</b>, the <b>class</b>, the <b>participant</b> (name, guardian, how they heard about us), and <b>contact</b> (email, and whether they’re linked on LINE).</p>
+  <p>Three filter tabs at the top — <b>To-do</b> (new requests waiting on you), <b>Confirmed</b> (booked, upcoming) and <b>History</b> (completed, declined, cancelled). Each row shows the <b>requested date &amp; time</b>, the <b>class</b>, the <b>participant</b> (name, guardian, how they heard about us), a <b>status badge</b>, and <b>contact</b> (email, and whether they’re linked on LINE). Tap a row to open the person's details, including a <b>“their journey”</b> timeline (applied → completed → enrollment invite sent → joined).</p>
   <h3>What you can do on each request</h3>
   <table>
     <tr><th>Button</th><th>What it does</th></tr>
@@ -161,7 +169,7 @@
     <tr><td>Decline</td><td>You <b>type a reason</b>; the customer receives it in their own language (Japanese or English).</td></tr>
     <tr><td>Cancel</td><td>For an already-confirmed booking — cancel it with an optional apology message.</td></tr>
     <tr><td>✉ Message</td><td>Preview the exact text that will be (or was) sent to the customer — handy to check before acting.</td></tr>
-    <tr><td>Show history</td><td>Reveal past declined/cancelled requests. “Hide history” keeps the list focused on what needs action.</td></tr>
+    <tr><td>History tab</td><td>Past requests — completed, declined, cancelled. Keeps the <b>To-do</b> tab focused on what needs action now.</td></tr>
     <tr><td>↻ Refresh</td><td>Reload the latest requests.</td></tr>
     <tr><td>Log out</td><td>Sign out of the admin page.</td></tr>
   </table>
@@ -222,7 +230,7 @@
     <line x1="267" y1="70" x2="285" y2="70" stroke="#8a93ad" stroke-width="1.4" marker-end="url(#pa)"/><line x1="389" y1="70" x2="407" y2="70" stroke="#8a93ad" stroke-width="1.4" marker-end="url(#pa)"/>
 
     <rect x="165" y="120" width="100" height="44" rx="8" fill="#fff" stroke="#cdd3e3" stroke-width="1.2"/><text x="215" y="140" class="pwt" text-anchor="middle">Applied</text><text x="215" y="155" class="pws" text-anchor="middle">family joins</text>
-    <rect x="287" y="120" width="100" height="44" rx="8" fill="#fff" stroke="#cdd3e3" stroke-width="1.2"/><text x="337" y="140" class="pwt" text-anchor="middle">Approved</text><text x="337" y="155" class="pws" text-anchor="middle">you approve</text>
+    <rect x="287" y="120" width="100" height="44" rx="8" fill="#fff" stroke="#cdd3e3" stroke-width="1.2"/><text x="337" y="140" class="pwt" text-anchor="middle">Approved</text><text x="337" y="155" class="pws" text-anchor="middle">= member now</text>
     <rect x="409" y="120" width="100" height="44" rx="8" fill="#fff" stroke="#cdd3e3" stroke-width="1.2"/><text x="459" y="140" class="pwt" text-anchor="middle">Fees in</text><text x="459" y="155" class="pws" text-anchor="middle">cash/transfer</text>
     <rect x="531" y="120" width="100" height="44" rx="8" fill="#fff" stroke="#cdd3e3" stroke-width="1.2"/><text x="581" y="140" class="pwt" text-anchor="middle">Activated</text><text x="581" y="155" class="pws" text-anchor="middle">member now</text>
     <line x1="267" y1="142" x2="285" y2="142" stroke="#8a93ad" stroke-width="1.4" marker-end="url(#pa)"/><line x1="389" y1="142" x2="407" y2="142" stroke="#8a93ad" stroke-width="1.4" marker-end="url(#pa)"/><line x1="511" y1="142" x2="529" y2="142" stroke="#8a93ad" stroke-width="1.4" marker-end="url(#pa)"/>
@@ -239,24 +247,22 @@
   <div class="callout c-key">🟦 <b>Live</b> = working today. 🟥 The <b>Member portal</b> (members seeing their schedule, sending an absence, booking a makeup — and parents doing it for their kids) is the <b>next thing we're building</b>, not live yet.</div>
 
   <h2><span class="n">8</span>The admin console — what each tab does</h2>
-  <p>The admin page now has a menu down the left (or tabs along the bottom on your phone). A small number badge means something there needs your attention.</p>
+  <p>The admin page has <b>five</b> spots — a menu down the left on a computer, or tabs along the bottom on your phone: <b>Home · Trials &amp; Enroll · Members · Gradings · Settings</b>. A small number badge means something there needs your attention — and that same count shows on the home-screen icon (Section 2).</p>
   <table>
     <tr><th>Tab</th><th>What it's for</th></tr>
     <tr><td>Home</td><td>Your dojo at a glance — active members, this month's revenue, what's unpaid, and anything needing action.</td></tr>
-    <tr><td>Trials</td><td>Trial requests to Confirm or Decline (Sections 1–6).</td></tr>
-    <tr><td>Enrollment</td><td>Approve people joining after their trial, and start their membership (Section 9).</td></tr>
+    <tr><td>Trials &amp; Enroll</td><td>One tab with a <b>Trials | Enroll</b> switch at the top — trial requests to Confirm/Decline (Sections 1–6) and enrollment applications to Approve (Section 9). Its badge counts both.</td></tr>
+    <tr><td>Members</td><td>Your roster of <b>current members</b> — profile, payments and belt history (Section 11).</td></tr>
     <tr><td>Gradings</td><td>Run belt tests and record who passed (Section 10).</td></tr>
-    <tr><td>Members</td><td>Your full member roster — profile, payments and belt history (Section 11).</td></tr>
+    <tr><td>Settings</td><td>Greyed out for now — coming later.</td></tr>
   </table>
-  <p style="font-size:14px;color:var(--mut)">Reminders and Settings are greyed out for now — coming later.</p>
 
   <h2><span class="n">9</span>Enrolling a new member</h2>
-  <p>After a good trial, the family applies to join from their phone. You finish it on the <b>Enrollment</b> tab:</p>
+  <p>After a good trial, the family applies to join from their phone. You finish it on the <b>Trials &amp; Enroll</b> tab — the <b>Enroll</b> side:</p>
   <div class="step"><div class="num">1</div><div class="tx"><b>Review</b> the application — chosen plan, child and guardian details.</div></div>
-  <div class="step"><div class="num">2</div><div class="tx"><b>Approve</b> it (or send it back).</div></div>
-  <div class="step"><div class="num">3</div><div class="tx"><b>Collect the joining fees</b> in person — enrollment fee, gi, insurance, first month — by <b>cash or bank transfer</b>, and mark them received.</div></div>
-  <div class="step"><div class="num">4</div><div class="tx"><b>Activate</b> — this makes them an official member, and a welcome message goes out automatically.</div></div>
-  <div class="step"><div class="num">5</div><div class="tx"><b>Card setup for monthly fees</b> — the system sends a card-registration link (LINE or email). Once they register, the monthly fee is charged automatically.</div></div>
+  <div class="step"><div class="num">2</div><div class="tx"><b>Approve</b> it (or send it back). <b>Approving makes them an official member straight away</b> and a welcome message goes out automatically — there's no separate “activate” step.</div></div>
+  <div class="step"><div class="num">3</div><div class="tx"><b>Card setup for monthly fees</b> — send the card-registration link (LINE or email). Once they register, the monthly fee is charged automatically.</div></div>
+  <div class="step"><div class="num">4</div><div class="tx"><b>Collect the joining fees</b> in person — enrollment fee, gi, insurance, first month — by <b>cash or bank transfer</b>. No rush; membership is already active.</div></div>
   <div class="callout c-key">💳 <b>Monthly fees</b> are charged by <b>card on the 20th</b>, for the <b>following month</b>. <b>Joining fees</b> are collected by <b>cash or bank transfer</b> in person — not by card.</div>
 
   <h2><span class="n">10</span>Belt tests (Gradings)</h2>
